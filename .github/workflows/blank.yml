@@ -10,13 +10,11 @@ on:
    runs-on: ubuntu-latest 
    steps:
    - run: echo "Hello Github Actions!"
-
 build:
  runs-on: ubuntu-latest
  steps: 
-    - run: echo "Build job"
-
-    test:
+   - run: echo "Build job"
+ test:
     needs: build
     runs-on: ubuntu-latest
     steps: 
