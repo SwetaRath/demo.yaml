@@ -4,19 +4,20 @@ name: My First job
 
 
 on:
-  
-  push:
-  my-job:
-   runs-on: ubuntu-latest 
-   steps:
-   - run: echo "Hello Github Actions!"
-build:
- runs-on: ubuntu-latest
- steps: 
-   - run: echo "Build job"
- test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps: 
-     -run: echo "Test job"
+  jobs:
+    first-job: 
+        runs-on: ubuntu-latest 
+        steps:
+        - name: Display the statement 
+        run: echo "Hello Github Actions!"
+    second-job:
+         runs-on: ubuntu-latest
+         steps: 
+           - name: echo "Check version"
+             run:  java --version
+    third-job:
+         runs-on: ubuntu-latest
+         steps: 
+           - name: echo "Check user"
+             run:  whoami
 
